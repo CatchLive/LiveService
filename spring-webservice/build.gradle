@@ -1,0 +1,49 @@
+buildscript {
+    ext {
+        springBootVersion = '2.3.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.study'
+version = '0.0.2'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+//Spring Boot Overriding
+ext['hibernate.version'] = '5.2.11.Final'
+
+dependencies {
+    implementation 'junit:junit:4.12'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-mustache'
+
+    // security + oauth2
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    runtime("org.springframework.boot:spring-boot-properties-migrator")
+    runtimeOnly('org.mariadb.jdbc:mariadb-java-client')
+    compileOnly('org.projectlombok:lombok')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    annotationProcessor ('org.projectlombok:lombok')
+}
