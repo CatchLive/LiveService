@@ -5,7 +5,7 @@ spring:
         registration:
           google:
             client-id:
-            clientSecret: 
+            clientSecret:
             scope:
               - email
               - profile
