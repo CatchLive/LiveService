@@ -41,28 +41,47 @@
         .navbar-word-right:hover:not(.active) {
             text-decoration: none;
         }
+        .sub-box {
+            z-index: 2;
+            width: 400px;
+            height: 400px;
+            background-color: white;
+
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center; /* 수직 정렬 */
+
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center; /* 수평 정렬 */
+        }
     </style>
 </head>
 <body>
 <!-- 상단 메뉴바 -->
 <ul class="navbar-box">
-    <li><a class="navbar-word-left" href="/">홈</a></li>
-    <li><a class="navbar-word-left" href="news">뉴스</a></li>
-    <li><a class="navbar-word-left" href="contact">고객센터</a></li>
-    <li><a class="navbar-word-left" href="about">About</a></li>
-
     <li>
         {{#guestName}}
-        <a class="navbar-word-right" href="/mypage">마이페이지</a>
-        <a class="navbar-word-right" href="/logout">로그아웃</a>
+        <a class="navbar-word-left" href="/logout">로그아웃</a>
+        <a class="navbar-word-right" href="/createRoom"> 방 만들기</a>
         {{/guestName}}
     </li>
     <li>
         {{^guestName}}
-        <a class="navbar-word-right" href="/signin">회원가입</a>
-        <a class="navbar-word-right" href="/signin">로그인</a>
+        <a class="navbar-word-left" href="/oauth2/authorization/google">로그인</a>
         {{/guestName}}
     </li>
+
+    <center>
+        <h1> Catch Live </h1>
+    </center>
 </ul>
 
 </body>

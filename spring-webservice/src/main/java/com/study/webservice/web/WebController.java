@@ -31,4 +31,9 @@ public class WebController {
     @GetMapping("/mypage")
     public String mypage() { return "mypage"; }
 
+    @GetMapping("/createRoom")
+    public String createRoom() { return "createRoom"; }
+
+    @GetMapping("/room")
+    public String room() { return "room"; }
 }

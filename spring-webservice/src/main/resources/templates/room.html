@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Create Room</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--부트스트랩 css 추가-->
+    <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+
+    <style type="text/css">
+        .navbar-box {
+            list-style-type: none;
+            margin: 0;
+            padding: 15px;
+            background-color: white;
+            border-bottom: 1px solid #bcbcbc;
+        }
+        .navbar-box:after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+        .navbar-word-left{
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 15px 17px;
+            text-decoration: none;
+        }
+        .navbar-word-left:hover:not(.active) {
+            text-decoration: none;
+        }
+        .navbar-word-right{
+            float: right;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 15px 17px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .navbar-word-right:hover:not(.active) {
+            text-decoration: none;
+        }
+        .main-box {
+            z-index: 1;
+            height: 990px;
+            background-color: #d6d8db;
+        }
+        .video{
+            z-index: 5;
+            float: left;
+            margin: auto;
+            width:1000px;
+            height:800px;
+            border: 1px solid gray;
+            border-radius: 3%;
+            margin-left: 100px;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: white;
+        }
+        .chat{
+            z-index: 5;
+            float: left;
+            margin: auto;
+            width:500px;
+            height:800px;
+            border: 1px solid gray;
+            border-radius: 3%;
+            margin-left: 100px;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: white;
+        }
+        .name{
+            text-align: center;
+            font-size : 25px;
+            color : black;
+            margin-top : 10px;
+            margin-left : 20px;
+            margin-right : 20px;
+            border-bottom : 0.5px solid gray;
+            padding-bottom: 10px;
+        }
+        .intro{
+            text-align: center;
+            height: 220px;
+            padding-top: 10px;
+            padding-right:25px;
+            padding-left:25px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 상단 메뉴바 -->
+<ul class="navbar-box">
+    <li>
+        {{#guestName}}
+        <a class="navbar-word-left" href="/logout">로그아웃</a>
+        {{/guestName}}
+    </li>
+
+    <center>
+        <h1> Room </h1>
+    </center>
+</ul>
+
+<div class="main-box">
+    <button type="button" class="btn-danger" onclick="location.href='/'";>방 나가기</button>
+    <div class = "video">
+        <div class = "name">
+            이름
+        </div>
+        <div class = "intro">
+            Live Streaming
+        </div>
+    </div>
+
+    <div class = "chat">
+        <div class = "name">
+            채팅
+        </div>
+    </div>
+</div>
+
+<!--부트스트랩 js, jquery 추가-->
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/bootstrap.min.js"></script>
+
+<!--custom js 추가-->
+<script src="/js/app/main.js"></script>
+
+</body>
+</html>
